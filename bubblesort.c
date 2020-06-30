@@ -3,7 +3,7 @@
 
 const int SIZE = 5;
 
-int * sortNumbers(int * numbers) {
+void sortNumbers(int * numbers) {
   bool sorted = false;
 
   // Create a temp variable for swapping values in an array, defining a default value (is it safe to just do `int temp`?) 
@@ -30,16 +30,15 @@ int * sortNumbers(int * numbers) {
       }
     }
   }
-  return numbers;
 }
 
 int main() {
-  int unsorted[SIZE] = {1, 5, 4, 2, 3};
-  int * sorted = sortNumbers(unsorted);
+  int testArr[SIZE] = {1, 5, 4, 2, 3};
+  sortNumbers(testArr);
 
   // TODO: Add unit tests, because they are fun and convenient 8-)
   for (int i=0; i < SIZE; i++) {
-    printf("%d\r\n", sorted[i]);
+    printf("%d\r\n", testArr[i]);
   }
   return 0;
 }
