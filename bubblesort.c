@@ -14,21 +14,16 @@ void sortNumbers(int * numbers) {
 
     // Loop 0 .. SIZE - 1 so we get all the indexes of the array
     for (int i=0; i < SIZE; i++) {
-
-      // Exit condition
-      if (i == SIZE - 1) {
-        sorted = !changed;
-        continue;
-      }
-
       // If nextNum < thisNum, swap
       if (numbers[i + 1] < numbers[i]) {
+        // TODO: How does XOR swap without the `temp` var
         temp = numbers[i + 1];
         numbers[i + 1] = numbers[i];
         numbers[i] = temp;
         changed = true;
       }
     }
+    sorted = !changed;
   }
 }
 
