@@ -4,16 +4,14 @@
 const int SIZE = 5;
 
 void sortNumbers(int * numbers) {
-  bool sorted = false;
-
   // Create a temp variable for swapping values in an array, defining a default value (is it safe to just do `int temp`?) 
   int temp = 0;
 
-  while (!sorted) {
+  for (int step = 0; step < SIZE - 1; step++) {
     bool changed = false;
 
-    // Loop 0 .. SIZE - 1 so we get all the indexes of the array
-    for (int i=0; i < SIZE; i++) {
+    // Loop 0 .. SIZE - 2 so we get all the indexes of the array, skip last element as no swapping is needed at that point
+    for (int i = 0; i < SIZE - 1; i++) {
       // If nextNum < thisNum, swap
       if (numbers[i + 1] < numbers[i]) {
         // TODO: How does XOR swap without the `temp` var
@@ -23,7 +21,6 @@ void sortNumbers(int * numbers) {
         changed = true;
       }
     }
-    sorted = !changed;
   }
 }
 
